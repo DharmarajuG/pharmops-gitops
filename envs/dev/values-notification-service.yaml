@@ -15,7 +15,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: dev.pharma.internal
+  host: afd20ef8406ec4dee91042331a2c5c5f-05e0cda9f4131f47.elb.us-east-1.amazonaws.com
   path: /notifications
   pathType: Prefix
 
@@ -58,7 +58,7 @@ configmap:
   SMTP_HOST: "smtp.example.com"
   SMTP_PORT: "587"
   EMAIL_FROM: "noreply-dev@example.com"
-  DB_HOST: <RDS_ENDPOINT>
+  DB_HOST: pharma-dev-postgres.ckd44g0cgi8g.us-east-1.rds.amazonaws.com
 
 envFrom:
 - secretRef:

@@ -15,7 +15,7 @@ service:
 ingress:
   enabled: true
   className: nginx
-  host: <YOUR_ALB_HOSTNAME>
+  host: afd20ef8406ec4dee91042331a2c5c5f-05e0cda9f4131f47.elb.us-east-1.amazonaws.com
   path: /api
   pathType: Prefix
 
@@ -78,5 +78,5 @@ volumes:
 serviceAccount:
   create: true
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::<AWS_ACCOUNT_ID>:role/pharma-dev-eks-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::dharmaraju313:role/pharma-dev-eks-role
   name: api-gateway
