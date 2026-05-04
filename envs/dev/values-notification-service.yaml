@@ -3,7 +3,7 @@ replicaCount: 1
 fullnameOverride: notification-service
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/notification-service
+  repository: dharmaraju313/notification-service
   tag: v1.0.0
   pullPolicy: Always
 
@@ -61,8 +61,8 @@ configmap:
   DB_HOST: <RDS_ENDPOINT>
 
 envFrom:
-  - secretRef:
-      name: db-credentials
+- secretRef:
+    name: db-credentials
 
 serviceAccount:
   create: true

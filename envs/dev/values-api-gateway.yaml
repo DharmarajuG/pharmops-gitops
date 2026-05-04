@@ -3,7 +3,7 @@ replicaCount: 1
 fullnameOverride: api-gateway
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/api-gateway
+  repository: dharmaraju313/api-gateway
   tag: v1.0.0
   pullPolicy: Always
 
@@ -62,18 +62,18 @@ configmap:
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
 
 envFrom:
-  - secretRef:
-      name: db-credentials
-  - secretRef:
-      name: jwt-secret
+- secretRef:
+    name: db-credentials
+- secretRef:
+    name: jwt-secret
 
 volumeMounts:
-  - name: tmp
-    mountPath: /tmp
+- name: tmp
+  mountPath: /tmp
 
 volumes:
-  - name: tmp
-    emptyDir: {}
+- name: tmp
+  emptyDir: {}
 
 serviceAccount:
   create: true

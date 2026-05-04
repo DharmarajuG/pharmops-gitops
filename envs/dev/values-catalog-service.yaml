@@ -5,7 +5,7 @@ replicaCount: 1
 fullnameOverride: drug-catalog-service
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/catalog-service
+  repository: dharmaraju313/catalog-service
   tag: v1.0.0
   pullPolicy: Always
 
@@ -62,16 +62,16 @@ configmap:
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
 
 envFrom:
-  - secretRef:
-      name: db-credentials
+- secretRef:
+    name: db-credentials
 
 volumeMounts:
-  - name: tmp
-    mountPath: /tmp
+- name: tmp
+  mountPath: /tmp
 
 volumes:
-  - name: tmp
-    emptyDir: {}
+- name: tmp
+  emptyDir: {}
 
 serviceAccount:
   create: true
